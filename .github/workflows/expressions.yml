@@ -3,14 +3,14 @@ run-name: 'Is an adult?'
 
 on:
   workflow_dispatch:
-  inputs:
-    name:
-      descrption: 'The name to check'
-      required: true
-    age:
-      description: 'The age to check'
-      required: true
-      default: 18
+    inputs:
+      name:
+        descrption: 'The name to check'
+        required: true
+      age:
+        description: 'The age to check'
+        required: true
+        default: 18
 
 jobs:
   is-an-adult:
