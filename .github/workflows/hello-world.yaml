@@ -1,12 +1,18 @@
 name: hello-world
-    on: [push]
-    jobs:
-        hola-mundo:
-            runs-on: ubuntu-latest
-            steps:
-                - name: Checkout
-                  uses: actions/checkout@v3
-                - name: Node
-                  uses: actions/setup-node@v4
-                - name: Running script
-                  run: node hello-world.js
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  hola-mundo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Node
+        uses: actions/setup-node@v4
+      - name: Running script
+        run: node hello-world.js
