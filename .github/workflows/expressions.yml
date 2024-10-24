@@ -1,0 +1,32 @@
+name: is-an-adult
+run-name: 'Is an adult?'
+
+on:
+  workflow_dispatch:
+  inputs:
+    name:
+      descrption: 'The name to check'
+      required: true
+    age:
+      description: 'The age to check'
+      required: true
+      default: 18
+
+jobs:
+  is-an-adult:
+    runs-on: ubuntu-latest
+    if: ${{ inputs.age >= 18 }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Running script
+        run: echo "${{ inputs.name }} is an adult"
+  
+  is-not-an-adult:
+    runs-on: ubuntu-latest
+    if: ${{ inputs.age < 18 }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Running script
+        run: echo "${{ inputs.name }} is not an adult"
