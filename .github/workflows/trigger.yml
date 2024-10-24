@@ -10,6 +10,9 @@ jobs:
   close-pr:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Close
         run: |
           gh pr close --comment "Auto-closing pull request" --delete-branch ${{ github.event.pull_request.number }}
