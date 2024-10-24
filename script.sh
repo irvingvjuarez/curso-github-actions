@@ -1,1 +1,1 @@
-echo 'New feature'
+echo 'New feature updated'
